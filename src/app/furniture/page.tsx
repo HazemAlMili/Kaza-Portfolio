@@ -65,7 +65,13 @@ export default function FurniturePage() {
   const { lang, dir } = useLang();
 
   useEffect(() => {
-    setMounted(true);
+    let active = true;
+    setTimeout(() => {
+      if (active) setMounted(true);
+    }, 0);
+    return () => {
+      active = false;
+    };
   }, []);
 
   useEffect(() => {
@@ -157,6 +163,7 @@ export default function FurniturePage() {
   }
 
   const t = copy[lang];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const sectorData = ((t as any).sectors?.[SECTOR_KEY]) || {};
   const features = sectorData.features || [];
 
@@ -171,7 +178,7 @@ export default function FurniturePage() {
             <div className="absolute inset-0 bg-gradient-to-b from-kaza-navy/85 via-kaza-navy/60 to-kaza-navy/90 z-10" />
             <Image
               src={HERO_IMAGE}
-              alt={t.furniturePage.itcanSection.title}
+              alt={t.furniturePage.kazaSection.title}
               fill
               priority
               className="object-cover object-center"
@@ -194,7 +201,7 @@ export default function FurniturePage() {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 font-serif leading-tight drop-shadow-md"
             >
-              {t.furniturePage.itcanSection.title}
+              {t.furniturePage.kazaSection.title}
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 15 }}
@@ -202,13 +209,13 @@ export default function FurniturePage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="max-w-2xl text-base md:text-lg leading-relaxed text-gray-200"
             >
-              {t.furniturePage.itcanSection.subtitle}
+              {t.furniturePage.kazaSection.subtitle}
             </motion.p>
           </div>
         </section>
 
         {/* Content Section */}
-        <section id="itcan-furniture" className="relative w-full py-20 lg:py-32">
+        <section id="kaza-furniture" className="relative w-full py-20 lg:py-32">
           <div className="container mx-auto px-6 lg:px-12 max-w-6xl">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               {/* Copywriting */}
@@ -223,8 +230,8 @@ export default function FurniturePage() {
                 </span>
                 <h2 className="text-3xl lg:text-4xl font-bold font-serif mb-6 text-kaza-navy leading-tight">
                   {lang === "ar"
-                    ? `إعادة تعريف خدمات ${t.furniturePage.itcanSection.title} بمعايير فندقية`
-                    : `Redefining ${t.furniturePage.itcanSection.title} with luxury hotel-grade operations`}
+                    ? `إعادة تعريف خدمات ${t.furniturePage.kazaSection.title} بمعايير فندقية`
+                    : `Redefining ${t.furniturePage.kazaSection.title} with luxury hotel-grade operations`}
                 </h2>
                 <p className="text-gray-600 text-lg leading-relaxed mb-8">
                   {sectorData.aboutSection}
@@ -257,7 +264,7 @@ export default function FurniturePage() {
               >
                 <Image
                   src={MAIN_IMAGE}
-                  alt={t.furniturePage.itcanSection.title}
+                  alt={t.furniturePage.kazaSection.title}
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -299,7 +306,7 @@ export default function FurniturePage() {
                   >
                     <Image
                       src={imgUrl}
-                      alt={`${t.furniturePage.itcanSection.title} ${index + 1}`}
+                      alt={`${t.furniturePage.kazaSection.title} ${index + 1}`}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                       sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"

@@ -13,7 +13,7 @@ export default function ROICalculator() {
   const totalRevenue = nights * rate;
 
   useEffect(() => {
-    let start = animatedRevenue;
+    const start = animatedRevenue;
     const end = totalRevenue;
     if (start === end) return;
     const steps = 30;
@@ -29,6 +29,7 @@ export default function ROICalculator() {
       }
     }, 16);
     return () => clearInterval(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [totalRevenue]);
 
   const labels = {

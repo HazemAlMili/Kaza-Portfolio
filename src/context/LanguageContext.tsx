@@ -176,7 +176,24 @@ export const copy = {
       beach: "كازا للشاطئ",
       breakfast: "كازا للإفطار",
       restaurant: "كازا للمطعم",
-      furniture: "إتقان للأثاث"
+      furniture: "كازا للأثاث",
+      limousine: "كازا ليموزين",
+      golfCar: "كازا سيارات الجولف",
+      lagoon: "كازا أنشطة البحيرة",
+      entertainment: "كازا للترفيه",
+      ticket: "كازا للتذاكر"
+    },
+    sectorsDropdownLabels: {
+      booking: "كازا للحجوزات",
+      beach: "كازا للشاطئ",
+      breakfast: "كازا للإفطار",
+      restaurant: "كازا للمطعم",
+      furniture: "كازا للأثاث",
+      limousine: "كازا ليموزين",
+      golfCar: "كازا سيارات الجولف",
+      lagoon: "كازا أنشطة البحيرة",
+      entertainment: "كازا للترفيه",
+      ticket: "كازا للتذاكر"
     },
 
     // Sectors
@@ -226,15 +243,70 @@ export const copy = {
         ctaText: "اطلب تفاصيل برنامج الشراكات"
       },
       furniture: {
-        title: "إتقان للأثاث والتجهيز الداخلي",
+        title: "كازا للأثاث والتجهيز الداخلي",
         heroSubtitle: "حوّل الوحدات الفارغة إلى مساحات ضيافة مذهلة وذات أداء تشغيلي مرتفع بتصميم متكامل وتجهيزات أثاث راقية.",
-        aboutSection: "التصميم يحدد مستوى الطلب. يعمل قسم إتقان للأثاث والتجهيز الداخلي مع مصممي ديكور محترفين لتجهيز وتوريد وتركيب أثاث فاخر عالي التحمل ومحسن للتشغيل التجاري.",
+        aboutSection: "التصميم يحدد مستوى الطلب. يعمل قسم كازا للأثاث والتجهيز الداخلي مع مصممي ديكور محترفين لتجهيز وتوريد وتركيب أثاث فاخر عالي التحمل ومحسن للتشغيل التجاري.",
         features: [
-          "حزم إتقان للأثاث المتكاملة (مفتاح باليد): تنسيق كامل للمخططات، المشتريات، التوصيل، والتركيب.",
+          "حزم كازا للأثاث المتكاملة (مفتاح باليد): تنسيق كامل للمخططات، المشتريات، التوصيل، والتركيب.",
           "متانة تجارية فندقية: أقمشة ومواد راقية مصممة لتحمل تشغيل الإيجارات المتكرر.",
           "تنسيق داخلي جذاب للصور: تنسيق جمالي استراتيجي لتعزيز معدلات الحجز عبر الإنترنت."
         ],
-        ctaText: "اطلب مقايسة إتقان للأثاث والتجهيز"
+        ctaText: "اطلب مقايسة كازا للأثاث والتجهيز"
+      },
+      limousine: {
+        title: "كازا ليموزين والخدمات اللوجستية",
+        heroSubtitle: "سافر براحة وفخامة مع خدمات النقل الخاص والتنقل الفاخر بين المطارات والمحافظات.",
+        aboutSection: "توفر كازا ليموزين حلول نقل راقية للضيوف والعملاء. من الاستقبال في المطار وحتى الانتقالات بين المدن، يضمن سائقونا المحترفون رحلة مريحة وآمنة وبأعلى معايير الرفاهية.",
+        features: [
+          "أسطول فاخر: سيارات صالون ودفع رباعي حديثة مجهزة بالكامل لراحتك.",
+          "سائقون محترفون: خبرة طويلة، التزام تام بالمواعيد، ومظهر لائق.",
+          "متاح على مدار الساعة: مرونة كاملة في المواعيد مع تتبع الرحلات لضمان دقة الاستقبال."
+        ],
+        ctaText: "احجز انتقالك الفاخر الآن"
+      },
+      golfCar: {
+        title: "كازا لسيارات الجولف والتنقل الداخلي",
+        heroSubtitle: "تنقل داخلي سلس ومريح داخل المنتجعات والمجمعات السكنية الراقية.",
+        aboutSection: "تنقل داخل الكمبوندات والمنتجعات الساحلية الراقية بكل سهولة. توفر كازا لسيارات الجولف خيارات تأجير وتنقل مريحة للتنقل السريع بين الشاطئ والمطاعم والوحدات السكنية.",
+        features: [
+          "أسطول كهربائي حديث: سيارات جولف صديقة للبيئة، صامتة وآمنة تماماً.",
+          "إيجار مرن: حزم تأجير يومية، أسبوعية، أو موسمية تناسب فترة إقامتك.",
+          "دعم وصيانة مستمرة: صيانة دورية سريعة مع توفير بديل فوري عند الأعطال."
+        ],
+        ctaText: "احجز سيارة الجولف الخاصة بك"
+      },
+      lagoon: {
+        title: "كازا لأنشطة البحيرات والألعاب المائية",
+        heroSubtitle: "تجارب ألعاب مائية ورياضات بحرية لا تُنسى في البحيرات الساحلية الخلابة.",
+        aboutSection: "انطلق في مغامرتك المائية مع أنشطة كازا للبحيرات. نوفر باقة من الرياضات والألعاب المائية، وتأجير المعدات، والتجارب الترفيهية المنظمة لجعل إقامتك مليئة بالحيوية والمتعة.",
+        features: [
+          "معدات متميزة: قوارب كاياك، ألواح تجديف، ومعدات ألعاب مائية عالية الجودة والأمان.",
+          "مدربون معتمدون: إشراف وتوجيه احترافي لضمان السلامة والمتعة لجميع الأعمار.",
+          "وصول حصري: حجز مسبق ومضمون للأنشطة في أجمل البحيرات والشواطئ."
+        ],
+        ctaText: "استكشف أنشطة البحيرة المتاحة"
+      },
+      entertainment: {
+        title: "كازا للترفيه وتنظيم الفعاليات",
+        heroSubtitle: "تنظيم فعاليات مميزة، عروض ترفيهية حية، وتجارب ترفيهية مخصصة لنخبة الضيوف.",
+        aboutSection: "تضفي كازا للترفيه حيوية خاصة على إقامتك. من تنظيم الحفلات الخاصة بالفيلا والعروض الموسيقية الحية إلى الفعاليات العائلية المبتكرة، نصمم لك تجارب ترفيهية تليق بضيوفنا.",
+        features: [
+          "تخطيط وتصميم الفعاليات: تنظيم متكامل للصوت والإضاءة والديكورات المخصصة.",
+          "حجز فنانين وموسيقيين: وصول لأفضل منسقي الأغاني (DJs) والعازفين لإحياء حفلاتكم.",
+          "أنشطة عائلية مخصصة: مناطق ترفيه للأطفال، سينما في الهواء الطلق، وألعاب تفاعلية."
+        ],
+        ctaText: "احجز عرضاً أو فعالية ترفيهية"
+      },
+      ticket: {
+        title: "كازا لحجز التذاكر والخدمات الحصرية",
+        heroSubtitle: "وصول ذو أولوية وحجوزات مضمونة لأهم الحفلات والمناسبات والوجهات الترفيهية.",
+        aboutSection: "كن دائماً في قلب الحدث. توفر كازا لحجز التذاكر خدمات كونسيرج ممتازة لحجز تذاكر الحفلات الموسيقية، النوادي الشاطئية، وأرقى الوجهات الترفيهية والمطاعم ذات الطلب العالي.",
+        features: [
+          "تذاكر كبار الشخصيات (VIP): حجز مقاعد ممتازة وتذاكر للمناسبات كاملة العدد.",
+          "حجز سهل وسريع: إصدار فوري للتذاكر وتوصيلها دون عناء أو أسعار مبالغ فيها.",
+          "خدمة الكونسيرج: دخول سريع وحجز طاولات مميزة في الوجهات الشريكة."
+        ],
+        ctaText: "اطلب تذكرتك ذات الأولوية الآن"
       }
     },
     pegasusSection: {
@@ -296,24 +368,41 @@ export const copy = {
     formPrivacy: "سيتواصل معك فريق KAZA خلال 24 ساعة. لن يتم مشاركة بياناتك مع أي طرف ثالث.",
     beachPage: {
       hero: {
-        title: "إدارة تشغيل الشواطئ والمناطق الساحلية",
-        subtitle: "لمحات من تجارب تشغيل وإدارة وجهاتنا الساحلية الفاخرة."
+        title: "إدارة تشغيل الشواطئ النخبوية",
+        subtitle: "دخول حصري وإدارة ساحلية فئة الخمس نجوم في أرقى الوجهات الشاطئية."
       },
       ctaButton: "اكتشف المزيد على إنستاجرام",
+      karlCta: "اكتشف كارل بيتش كلوب على إنستاجرام",
+      massimoCta: "اكتشف ماسيمو بيتش كلوب على إنستاجرام",
       videoSection: {
         title: "أبرز لقطات إنستاجرام",
         subtitle: "شاهد كواليس عملياتنا الحية وخبرتنا في تشغيل الشواطئ والمناطق الساحلية."
+      },
+      partners: {
+        karl: {
+          name: "كارل بيتش كلوب",
+          desc: "ملاذ عائلي ساحر، حيث تمنحك الأكواخ الخاصة الفاخرة فرصة الاسترخاء وسكينة الأمواج."
+        },
+        massimo: {
+          name: "ماسيمو بيتش كلوب",
+          desc: "ماسيمو يضفي الحياة والجمال أينما وُجد 🌴\n🌴 العلمين الجديدة، الساحل الشمالي"
+        }
+      },
+      badges: {
+        google: "ملف جوجل",
+        instagram: "إنستاجرام",
+        facebook: "فيسبوك"
       }
     },
     furniturePage: {
-      itcanSection: {
-        title: "إتقان للأثاث",
-        subtitle: "حلول الأثاث الفاخر، المطابخ، والخزائن المخصصة للملاك."
+      kazaSection: {
+        title: "كازا للأثاث",
+        subtitle: "حلول الأثاث الفاخر، المطابخ، والخزائن المخصصة لملاك الوحدات الراقية."
       },
       gallery: {
-        title: "معرض إتقان للأثاث",
-        description: "تصفح مجموعة من أرقى وحدات كازا المجهزة بأحدث تصاميم وتجهيزات إتقان للأثاث الفاخر.",
-        designCaption: "تصميم إتقان للأثاث"
+        title: "معرض كازا للأثاث",
+        description: "تصفح مجموعة من أرقى وحدات كازا المجهزة بأحدث تصاميم وتجهيزات كازا للأثاث الفاخر.",
+        designCaption: "تصميم كازا للأثاث"
       }
     },
     restaurantPage: {
@@ -331,6 +420,22 @@ export const copy = {
         description: "استمتع بمشاهدة أطباق مطعم برنسس وتصميمه الراقي وخدمته المتميزة.",
         designCaption: "أطباق وتصميم مطعم برنسس"
       }
+    },
+    lagoonActivitiesPage: {
+      hero: {
+        title: "أنشطة البحيرة من كازا",
+        subtitle: "إعادة تعريف رفاهية المياه الفيروزية من خلال الرياضات المائية المنسقة وتجارب البحيرة النخبوية."
+      },
+      videoSection: {
+        title: "كواليس أنشطة البحيرة",
+        subtitle: "شاهد الحيوية والرفاهية المائية في بحيرات كازا المميزة."
+      },
+      cards: {
+        card1: { title: "خدمات الجيت سكي الخاصة" },
+        card2: { title: "رحلات الكاياك الخاصة" },
+        card3: { title: "رياضة الويك بورد الفاخرة" }
+      },
+      externalCta: "تابع رحلتنا على تيك توك"
     },
   },
   en: {
@@ -465,7 +570,24 @@ export const copy = {
       beach: "KAZA Beach",
       breakfast: "KAZA Breakfast",
       restaurant: "KAZA Restaurant",
-      furniture: "Itcan Furniture"
+      furniture: "KAZA Furniture",
+      limousine: "KAZA Limousine",
+      golfCar: "KAZA Golf Car",
+      lagoon: "KAZA Lagoon Activities",
+      entertainment: "KAZA Entertainment",
+      ticket: "KAZA Ticket"
+    },
+    sectorsDropdownLabels: {
+      booking: "KAZA Booking",
+      beach: "KAZA Beach",
+      breakfast: "KAZA Breakfast",
+      restaurant: "KAZA Restaurant",
+      furniture: "KAZA Furniture",
+      limousine: "KAZA Limousine",
+      golfCar: "KAZA Golf Car",
+      lagoon: "KAZA Lagoon Activities",
+      entertainment: "KAZA Entertainment",
+      ticket: "KAZA Ticket"
     },
 
     // Sectors
@@ -515,15 +637,70 @@ export const copy = {
         ctaText: "Request Partnership Program Details"
       },
       furniture: {
-        title: "Itcan Furniture & Interior Setup",
+        title: "KAZA Furniture & Interior Setup",
         heroSubtitle: "Transform empty units into stunning, high-performance hospitality spaces with turn-key design and custom furniture services.",
-        aboutSection: "Design dictates demand. Itcan's furniture and interior design department works with professional interior designers to curate, procure, and install high-durability, luxury furniture and equipment optimized for commercial rental operations.",
+        aboutSection: "Design dictates demand. KAZA's furniture and interior design department works with professional interior designers to curate, procure, and install high-durability, luxury furniture and equipment optimized for commercial rental operations.",
         features: [
-          "Turn-key Itcan Furniture Packages: Complete layout curation, purchase, delivery, and setup.",
+          "Turn-key KAZA Furniture Packages: Complete layout curation, purchase, delivery, and setup.",
           "Commercial-Grade Durability: High-end fabrics and materials designed to withstand vacation wear.",
           "Photogenic Interior Styling: Strategic aesthetic placement to maximize listing click-through rates."
         ],
-        ctaText: "Request an Itcan Furniture Quote"
+        ctaText: "Request a KAZA Furniture Quote"
+      },
+      limousine: {
+        title: "KAZA Limousine & Premium Transfers",
+        heroSubtitle: "Travel in comfort and luxury with our private, premium airport and regional transfer services.",
+        aboutSection: "KAZA Limousine provides elite transportation solutions for guests. From airport pick-ups to regional transfers, our professional chauffeurs ensure a smooth, secure, and luxury journey.",
+        features: [
+          "Luxury Fleet: Modern, premium sedans and SUVs styled for ultimate comfort.",
+          "Professional Chauffeurs: Experienced, multilingual, and background-checked drivers.",
+          "24/7 Availability: On-demand scheduling and flight tracking for punctual pickups."
+        ],
+        ctaText: "Book a Luxury Transfer"
+      },
+      golfCar: {
+        title: "KAZA Golf Car Services",
+        heroSubtitle: "Seamless local mobility within luxury resorts and beachfront communities.",
+        aboutSection: "Navigate premium coastal compounds and resorts effortlessly. KAZA Golf Car services offer rental and standby mobility options for easy transport between beach, dining, and residences.",
+        features: [
+          "Electric Fleet: Eco-friendly, silent, and modern electric golf carts.",
+          "Flexible Rentals: Daily, weekly, or seasonal packages tailored to your stay.",
+          "Maintenance Support: On-call technical support and immediate vehicle replacement."
+        ],
+        ctaText: "Reserve a Golf Car"
+      },
+      lagoon: {
+        title: "KAZA Lagoon & Water Activities",
+        heroSubtitle: "Unforgettable water sports and leisure experiences on pristine coastal lagoons.",
+        aboutSection: "Dive into adventure with KAZA Lagoon Activities. We offer curated water sports, equipment rentals, and guided leisure experiences designed to make lagoon life vibrant and engaging.",
+        features: [
+          "Premium Equipment: High-quality kayaks, paddleboards, and water sports gear.",
+          "Certified Instructors: Professional guidance and safety monitoring for all ages.",
+          "Exclusive Access: Reserved booking spots on premium lagoons and beaches."
+        ],
+        ctaText: "Explore Lagoon Activities"
+      },
+      entertainment: {
+        title: "KAZA Entertainment & Event Styling",
+        heroSubtitle: "Curating elite events, live entertainment, and personalized leisure experiences.",
+        aboutSection: "KAZA Entertainment brings life to your stay. From private villa parties and live music performances to curated family events, we orchestrate bespoke entertainment at the highest standard.",
+        features: [
+          "Bespoke Event Planning: Tailored setups, lighting, sound, and theme design.",
+          "Live Talent Booking: Access to top DJs, musicians, and specialty performers.",
+          "Family-Friendly Zones: Dedicated kids' activities, movie nights, and interactive games."
+        ],
+        ctaText: "Book an Event or Show"
+      },
+      ticket: {
+        title: "KAZA Ticket Booking & Concierge",
+        heroSubtitle: "Priority access and tickets to the most exclusive concerts, parties, and venues.",
+        aboutSection: "Never miss out on the action. KAZA Ticket provides priority concierge booking for high-demand concerts, parties, beach clubs, and elite dining venues in top coastal and city destinations.",
+        features: [
+          "VIP Ticket Allocation: Access to sold-out events and premium seating arrangements.",
+          "Seamless Booking: Direct ticketing without hassle or inflated reseller rates.",
+          "Concierge Services: Fast-track entry and table reservations at partner venues."
+        ],
+        ctaText: "Request Priority Tickets"
       }
     },
     pegasusSection: {
@@ -584,24 +761,41 @@ export const copy = {
     formPrivacy: "KAZA team will contact you within 24 hours. Your data will never be shared with third parties.",
     beachPage: {
       hero: {
-        title: "Coastal & Beachfront Operations",
-        subtitle: "Curated moments from our premium managed coastal escapes."
+        title: "Elite Beachfront Operations",
+        subtitle: "Exclusive access and five-star coastal management at premium seaside destinations."
       },
       ctaButton: "Explore More on Instagram",
+      karlCta: "Explore Karl Beach Club on Instagram",
+      massimoCta: "Explore Massimo Beach Club on Instagram",
       videoSection: {
         title: "Instagram Video Highlights",
         subtitle: "Watch behind-the-scenes moments of our beachfront operations."
+      },
+      partners: {
+        karl: {
+          name: "Karl Beach Club",
+          desc: "A Family Oriented Paradise Escape Where Lavish Private Setting Cottages, Let You Snuggle Up By The Serenity of waves."
+        },
+        massimo: {
+          name: "Massimo Beach Club",
+          desc: "Massimo brings life to the place where it is placed 🌴\n🌴 New Alamein North Coast"
+        }
+      },
+      badges: {
+        google: "Google Profile",
+        instagram: "Instagram",
+        facebook: "Facebook"
       }
     },
     furniturePage: {
-      itcanSection: {
-        title: "Itcan Furniture",
-        subtitle: "Bespoke cabinetry and integrated luxury furnishing solutions."
+      kazaSection: {
+        title: "KAZA Furniture",
+        subtitle: "Bespoke cabinetry and integrated luxury furnishing solutions for premium property owners."
       },
       gallery: {
-        title: "Itcan Furniture Gallery",
-        description: "Explore our curated collection of premium units furnished with luxury Itcan designs and custom setups.",
-        designCaption: "Itcan Furniture Design"
+        title: "KAZA Furniture Gallery",
+        description: "Explore our curated collection of premium units furnished with luxury KAZA designs and custom setups.",
+        designCaption: "KAZA Furniture Design"
       }
     },
     restaurantPage: {
@@ -619,6 +813,22 @@ export const copy = {
         description: "Explore the exquisite dishes, premium design, and curated dining experiences at Princess.",
         designCaption: "Princess Culinary Experience"
       }
+    },
+    lagoonActivitiesPage: {
+      hero: {
+        title: "KAZA Lagoon Activities",
+        subtitle: "Redefining turquoise luxury through elite watersports and curated lagoon experiences."
+      },
+      videoSection: {
+        title: "Lagoon Activities Highlights",
+        subtitle: "Watch our exclusive watersports operations and premium lagoon experiences in action."
+      },
+      cards: {
+        card1: { title: "Jet Ski Concierge" },
+        card2: { title: "Private Kayak Escapes" },
+        card3: { title: "Luxury Wakeboarding" }
+      },
+      externalCta: "Follow Our Journey on TikTok"
     },
   },
 } as const;

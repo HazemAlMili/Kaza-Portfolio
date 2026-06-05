@@ -31,7 +31,7 @@ export default function SmoothScrollProvider({ children }: { children: React.Rea
     });
 
     lenisRef.current = lenis;
-    (window as any).lenis = lenis; // Support mobile navigation scroll lock
+    (window as unknown as { lenis?: Lenis }).lenis = lenis; // Support mobile navigation scroll lock
 
     // Direct binding into the GSAP rendering engine ticker
     function rafTicker(time: number) {
@@ -44,7 +44,7 @@ export default function SmoothScrollProvider({ children }: { children: React.Rea
 
     // Global Cleanup Lifecycle
     return () => {
-      delete (window as any).lenis;
+      delete (window as unknown as { lenis?: Lenis }).lenis;
       lenis.destroy();
       gsap.ticker.remove(rafTicker);
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());

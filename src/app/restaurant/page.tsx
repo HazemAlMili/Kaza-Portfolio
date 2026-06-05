@@ -29,7 +29,13 @@ export default function RestaurantPage() {
   const [activeImgIndex, setActiveImgIndex] = useState<number | null>(null);
 
   useEffect(() => {
-    setMounted(true);
+    let active = true;
+    setTimeout(() => {
+      if (active) setMounted(true);
+    }, 0);
+    return () => {
+      active = false;
+    };
   }, []);
 
   useEffect(() => {
@@ -72,16 +78,17 @@ export default function RestaurantPage() {
 
   // Handle page scrolling and Lenis scroll behavior when lightbox opens
   useEffect(() => {
+    const win = window as unknown as { lenis?: { stop: () => void; start: () => void } };
     if (activeImgIndex !== null) {
       document.body.style.overflow = "hidden";
-      if ((window as any).lenis) (window as any).lenis.stop();
+      if (win.lenis) win.lenis.stop();
     } else {
       document.body.style.overflow = "";
-      if ((window as any).lenis) (window as any).lenis.start();
+      if (win.lenis) win.lenis.start();
     }
     return () => {
       document.body.style.overflow = "";
-      if ((window as any).lenis) (window as any).lenis.start();
+      if (win.lenis) win.lenis.start();
     };
   }, [activeImgIndex]);
 
@@ -100,8 +107,10 @@ export default function RestaurantPage() {
   }
 
   const t = copy[lang];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const sectorData = ((t as any).sectors?.[SECTOR_KEY]) || {};
   const features = sectorData.features || [];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const pageCopy = (t as any).restaurantPage || {};
 
   return (

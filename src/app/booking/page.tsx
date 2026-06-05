@@ -22,7 +22,13 @@ export default function BookingPage() {
   const { lang, dir } = useLang();
 
   useEffect(() => {
-    setMounted(true);
+    let active = true;
+    setTimeout(() => {
+      if (active) setMounted(true);
+    }, 0);
+    return () => {
+      active = false;
+    };
   }, []);
 
   useEffect(() => {
@@ -54,6 +60,7 @@ export default function BookingPage() {
   }
 
   const t = copy[lang];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const sectorData = ((t as any).sectors?.[SECTOR_KEY]) || {};
   const features = sectorData.features || [];
 

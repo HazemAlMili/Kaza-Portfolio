@@ -23,10 +23,10 @@ export default function Header() {
   const t = copy[lang];
 
   // Safeguard translation
-  const sectorsLabel = (t as any).navSectors || "Sectors";
-  const sectorsMenuData = (t as any).sectorsMenu || {};
+  const sectorsLabel = t.navSectors || "Sectors";
+  const sectorsMenuData = t.sectorsDropdownLabels || t.sectorsMenu || {};
 
-  const sectorRoutes = ["/booking", "/beach", "/breakfast", "/restaurant", "/furniture"];
+  const sectorRoutes = ["/booking", "/beach", "/breakfast", "/restaurant", "/furniture", "/limousine", "/golf-car", "/lagoon-activities", "/entertainment", "/ticket"];
   const isSectorActive = sectorRoutes.includes(pathname);
 
   useEffect(() => {
@@ -37,16 +37,17 @@ export default function Header() {
 
   // Handle body scroll locking when mobile menu is active
   useEffect(() => {
+    const win = window as unknown as { lenis?: { stop: () => void; start: () => void } };
     if (mobileMenuOpen) {
       document.body.style.overflow = "hidden";
-      if ((window as any).lenis) (window as any).lenis.stop();
+      if (win.lenis) win.lenis.stop();
     } else {
       document.body.style.overflow = "";
-      if ((window as any).lenis) (window as any).lenis.start();
+      if (win.lenis) win.lenis.start();
     }
     return () => {
       document.body.style.overflow = "";
-      if ((window as any).lenis) (window as any).lenis.start();
+      if (win.lenis) win.lenis.start();
     };
   }, [mobileMenuOpen]);
 
@@ -109,10 +110,15 @@ export default function Header() {
 
   const mobileSectors = [
     { key: "booking", label: sectorsMenuData.booking || "Booking", href: "/booking" },
-    { key: "beach", label: sectorsMenuData.beach || "Beach", href: "/beach" },
+    { key: "beach", label: sectorsMenuData.beach || "KAZA Beach", href: "/beach" },
     { key: "breakfast", label: sectorsMenuData.breakfast || "Breakfast", href: "/breakfast" },
     { key: "restaurant", label: sectorsMenuData.restaurant || "Restaurant", href: "/restaurant" },
-    { key: "furniture", label: sectorsMenuData.furniture || "Furniture", href: "/furniture" },
+    { key: "furniture", label: sectorsMenuData.furniture || "KAZA Furniture", href: "/furniture" },
+    { key: "limousine", label: sectorsMenuData.limousine || "KAZA Limousine", href: "/limousine" },
+    { key: "golfCar", label: sectorsMenuData.golfCar || "KAZA Golf Car", href: "/golf-car" },
+    { key: "lagoon", label: sectorsMenuData.lagoon || "KAZA Lagoon Activities", href: "/lagoon-activities" },
+    { key: "entertainment", label: sectorsMenuData.entertainment || "KAZA Entertainment", href: "/entertainment" },
+    { key: "ticket", label: sectorsMenuData.ticket || "KAZA Ticket", href: "/ticket" },
   ];
 
   return (
@@ -134,7 +140,7 @@ export default function Header() {
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8 2xl:gap-10 text-xs xl:text-sm font-medium text-white/90 whitespace-nowrap">
-            {desktopLinks.map((item, i) => {
+            {desktopLinks.map((item) => {
               if (item.isSectors) {
                 return (
                   <div
@@ -280,7 +286,7 @@ export default function Header() {
                     opacity: sectorsAccordionOpen ? 1 : 0,
                   }}
                   transition={{ duration: 0.3 }}
-                  className={`overflow-hidden space-y-3 mt-3 border-white/10 ${
+                  className={`overflow-y-auto max-h-[280px] space-y-3 mt-3 border-white/10 scrollbar-none ${
                     dir === "rtl" ? "border-r pr-4 pl-0" : "border-l pl-4 pr-0"
                   }`}
                 >
