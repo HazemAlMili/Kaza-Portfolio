@@ -9,6 +9,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLang, copy } from "@/context/LanguageContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import UnifiedContactForm from "@/components/UnifiedContactForm";
+import { LuxurySkeletonFrame, LuxuryTextSkeleton } from "@/components/LuxurySkeletonGrid";
 import { CheckCircle2, ArrowLeft, ArrowRight } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -41,22 +43,13 @@ const CARDS = [
 ];
 
 export default function LagoonActivitiesPage() {
-  const [mounted, setMounted] = useState(false);
+  const [failedVideos, setFailedVideos] = useState<Set<string>>(new Set());
   const containerRef = useRef<HTMLDivElement>(null);
   const { lang, dir } = useLang();
 
-  useEffect(() => {
-    let active = true;
-    setTimeout(() => {
-      if (active) setMounted(true);
-    }, 0);
-    return () => {
-      active = false;
-    };
-  }, []);
 
   useEffect(() => {
-    if (!mounted || !containerRef.current) return;
+    if (!containerRef.current) return;
 
     const ctx = gsap.context(() => {
       gsap.to(".sector-hero-bg", {
@@ -73,15 +66,8 @@ export default function LagoonActivitiesPage() {
     }, containerRef);
 
     return () => ctx.revert();
-  }, [mounted]);
+  }, []);
 
-  if (!mounted) {
-    return (
-      <div className="min-h-screen bg-kaza-navy flex items-center justify-center">
-        <div className="w-12 h-12 rounded-full border-4 border-kaza-gold border-t-transparent animate-spin" />
-      </div>
-    );
-  }
 
   const t = copy[lang];
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -154,8 +140,8 @@ export default function LagoonActivitiesPage() {
                     ? `إعادة تعريف خدمات ${sectorData.title} بمعايير فندقية`
                     : `Redefining ${sectorData.title} with luxury hotel-grade operations`}
                 </h2>
-                <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                  {sectorData.aboutSection}
+                <p className="text-gray-600 text-lg leading-relaxed mb-8 min-h-[112px]">
+                  {sectorData.aboutSection || <LuxuryTextSkeleton rows={4} />}
                 </p>
 
                 <ul className="space-y-4">
@@ -175,21 +161,21 @@ export default function LagoonActivitiesPage() {
                 </ul>
               </motion.div>
 
-              {/* Imagery */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="relative aspect-video lg:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-kaza-gold/25"
+                className="relative aspect-video w-full overflow-hidden rounded-3xl border border-kaza-navy-light/40 bg-kaza-navy-light shadow-2xl lg:aspect-[4/3]"
               >
                 <Image
                   src={HERO_IMAGE_URL}
-                  alt={sectorData.title || "Lagoon Activities"}
+                  alt={t.lagoonActivitiesPage.hero.title}
                   fill
-                  className="object-cover hover:scale-105 transition-transform duration-700"
+                  className="object-cover object-center transition-transform duration-700 hover:scale-105"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
+                <div className="absolute inset-0 bg-gradient-to-br from-kaza-navy/10 via-transparent to-kaza-navy/35" />
               </motion.div>
             </div>
           </div>
@@ -221,17 +207,21 @@ export default function LagoonActivitiesPage() {
                   {/* Subtle Top Inner Shadow & Bottom Gradient */}
                   <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-kaza-navy/90 z-10 pointer-events-none" />
 
-                  {/* Performance-optimized HTML5 video element */}
-                  <video
-                    src={card.video}
-                    poster={card.poster}
-                    muted
-                    autoPlay
-                    loop
-                    playsInline
-                    preload="none"
-                    className="w-full h-full object-cover transition-transform duration-[1s] ease-out group-hover:scale-102"
-                  />
+                  {failedVideos.has(card.video) ? (
+                    <LuxurySkeletonFrame ratio="portrait" minHeight="min-h-full" className="rounded-3xl border-white/10" />
+                  ) : (
+                    <video
+                      src={card.video}
+                      poster={card.poster}
+                      muted
+                      autoPlay
+                      loop
+                      playsInline
+                      preload="none"
+                      onError={() => setFailedVideos((current) => new Set(current).add(card.video))}
+                      className="w-full h-full object-cover transition-transform duration-[1s] ease-out group-hover:scale-102"
+                    />
+                  )}
 
                   {/* Desktop Hover Info Card (Gold-bordered, Slide-up reveal) */}
                   <div className="absolute bottom-6 left-6 right-6 p-6 rounded-2xl border border-kaza-gold/60 bg-kaza-navy/85 backdrop-blur-md transition-all duration-500 ease-out translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 pointer-events-none md:block hidden z-20">
@@ -316,6 +306,8 @@ export default function LagoonActivitiesPage() {
           </div>
         </section>
       </div>
+
+      <UnifiedContactForm />
 
       <Footer />
     </main>

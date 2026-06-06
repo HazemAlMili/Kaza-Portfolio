@@ -9,6 +9,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLang, copy } from "@/context/LanguageContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import UnifiedContactForm from "@/components/UnifiedContactForm";
+import SocialVerificationBadge from "@/components/SocialVerificationBadge";
 import { CheckCircle2, ArrowLeft, ArrowRight } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -108,6 +110,14 @@ export default function BookingPage() {
             >
               {sectorData.heroSubtitle}
             </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.35 }}
+              className="mt-6"
+            >
+              <SocialVerificationBadge />
+            </motion.div>
           </div>
         </section>
 
@@ -215,6 +225,7 @@ export default function BookingPage() {
             </motion.div>
           </div>
         </section>
+        <UnifiedContactForm />
       </div>
 
       <Footer />

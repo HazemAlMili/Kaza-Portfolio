@@ -13,12 +13,28 @@ export default function HeroSection() {
   const { lang, dir } = useLang();
   const t = copy[lang];
 
-  function scrollToContactForm() {
-    const target = document.querySelector("#contact-form");
-    if (!target) return;
-    const offset = 80;
-    const top = target.getBoundingClientRect().top + window.scrollY - offset;
-    window.scrollTo({ top, behavior: "smooth" });
+  function openWhatsAppConsultation(intent: "evaluation" | "partnership") {
+    const whatsappBaseUrl = "https://wa.me/201000082960";
+    const message =
+      lang === "ar"
+        ? `السادة فريق كازا لإدارة الأصول والضيافة،
+
+أرغب في ${intent === "evaluation" ? "طلب تقييم وحدتي" : "التحدث مع فريق الشراكات"} عبر منصتكم الرسمية.
+
+برجاء تنسيق استشارة تنفيذية ومشاركة الخطوات التالية.
+
+مع خالص التقدير،`
+        : `Dear KAZA Luxury Asset Management Team,
+
+I would like to ${intent === "evaluation" ? "request a property evaluation" : "speak with the partnerships team"} through your official portfolio.
+
+Kindly coordinate an executive consultation and share the next steps.
+
+Best regards,`;
+
+    const target = `${whatsappBaseUrl}?text=${encodeURIComponent(message)}`;
+    const whatsappWindow = window.open(target, "_blank", "noopener,noreferrer");
+    if (whatsappWindow) whatsappWindow.opener = null;
   }
 
   useEffect(() => {
@@ -89,12 +105,15 @@ export default function HeroSection() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto"
         >
           <button
-            onClick={scrollToContactForm}
+            onClick={() => openWhatsAppConsultation("evaluation")}
             className="w-full sm:w-auto bg-kaza-gold hover:bg-kaza-gold-light text-kaza-navy font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl hover:shadow-kaza-gold/20"
           >
             {t.heroCta1}
           </button>
-          <button className="w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white font-bold py-4 px-10 rounded-full transition-all duration-300">
+          <button
+            onClick={() => openWhatsAppConsultation("partnership")}
+            className="w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white font-bold py-4 px-10 rounded-full transition-all duration-300"
+          >
             {t.heroCta2}
           </button>
         </motion.div>

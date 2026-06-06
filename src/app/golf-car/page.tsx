@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,30 +9,23 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLang, copy } from "@/context/LanguageContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import UnifiedContactForm from "@/components/UnifiedContactForm";
+import { LuxuryTextSkeleton } from "@/components/LuxurySkeletonGrid";
 import { CheckCircle2, ArrowLeft, ArrowRight } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const SECTOR_KEY = "golfCar";
-const IMAGE_URL = "https://images.unsplash.com/photo-1594144404733-e3b828db01ac?auto=format&fit=crop&q=80&w=1200";
+const COVER_IMAGE = "/images/golf/golf-cart-cover.avif";
+const DESCRIPTION_IMAGE = "/images/golf/golf-cart-land.avif";
+const BLUR_DATA_URL = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNsaWmrBwAEbQFn4b39GgAAAABJRU5ErkJggg==";
 
 export default function GolfCarPage() {
-  const [mounted, setMounted] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const { lang, dir } = useLang();
 
   useEffect(() => {
-    let active = true;
-    setTimeout(() => {
-      if (active) setMounted(true);
-    }, 0);
-    return () => {
-      active = false;
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!mounted || !containerRef.current) return;
+    if (!containerRef.current) return;
 
     const ctx = gsap.context(() => {
       gsap.to(".sector-hero-bg", {
@@ -49,35 +42,37 @@ export default function GolfCarPage() {
     }, containerRef);
 
     return () => ctx.revert();
-  }, [mounted]);
-
-  if (!mounted) {
-    return (
-      <div className="min-h-screen bg-kaza-navy flex items-center justify-center">
-        <div className="w-12 h-12 rounded-full border-4 border-kaza-gold border-t-transparent animate-spin" />
-      </div>
-    );
-  }
+  }, []);
 
   const t = copy[lang];
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const sectorData = ((t as any).sectors?.[SECTOR_KEY]) || {};
+  const sectorData = (t as any).sectors?.[SECTOR_KEY] || {};
   const features = sectorData.features || [];
+  const placeholderAlt = t.placeholderMetaData.golfCarAlt;
+  const imageAlt = sectorData.title || placeholderAlt;
 
   return (
-    <main dir={dir} className="min-h-screen bg-kaza-pearl text-kaza-navy flex flex-col justify-between">
+    <main
+      dir={dir}
+      className="min-h-screen bg-kaza-pearl text-kaza-navy flex flex-col justify-between"
+    >
       <div>
         <Header />
 
         {/* Parallax Hero */}
-        <section ref={containerRef} className="relative h-[60vh] w-full overflow-hidden flex items-center justify-center pt-20">
+        <section
+          ref={containerRef}
+          className="relative h-[60vh] w-full overflow-hidden flex items-center justify-center pt-20"
+        >
           <div className="sector-hero-bg absolute inset-0 z-0 w-full h-[120%] -top-[10%]">
             <div className="absolute inset-0 bg-gradient-to-b from-kaza-navy/85 via-kaza-navy/60 to-kaza-navy/90 z-10" />
             <Image
-              src={IMAGE_URL}
-              alt={sectorData.title || "Golf Car"}
+              src={COVER_IMAGE}
+              alt={imageAlt}
               fill
               priority
+              placeholder="blur"
+              blurDataURL={BLUR_DATA_URL}
               className="object-cover object-center"
               sizes="100vw"
             />
@@ -90,7 +85,9 @@ export default function GolfCarPage() {
               transition={{ duration: 0.6 }}
               className="mb-4 inline-block px-4 py-1 rounded-full border border-kaza-gold/30 bg-kaza-gold/15 text-kaza-gold text-xs font-semibold tracking-wider uppercase"
             >
-              {lang === "ar" ? "قطاعات KAZA المميزة" : "KAZA Specialized Sectors"}
+              {lang === "ar"
+                ? "قطاعات KAZA المميزة"
+                : "KAZA Specialized Sectors"}
             </motion.span>
             <motion.h1
               initial={{ opacity: 0, y: 25 }}
@@ -123,15 +120,17 @@ export default function GolfCarPage() {
                 transition={{ duration: 0.7 }}
               >
                 <span className="text-kaza-gold text-xs font-bold uppercase tracking-widest block mb-3">
-                  {lang === "ar" ? "عن الخدمة التشغيلية" : "Operational Overview"}
+                  {lang === "ar"
+                    ? "عن الخدمة التشغيلية"
+                    : "Operational Overview"}
                 </span>
                 <h2 className="text-3xl lg:text-4xl font-bold font-serif mb-6 text-kaza-navy leading-tight">
                   {lang === "ar"
                     ? `إعادة تعريف خدمات ${sectorData.title} بمعايير فندقية`
                     : `Redefining ${sectorData.title} with luxury hotel-grade operations`}
                 </h2>
-                <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                  {sectorData.aboutSection}
+                <p className="text-gray-600 text-lg leading-relaxed mb-8 min-h-[112px]">
+                  {sectorData.aboutSection || <LuxuryTextSkeleton rows={4} />}
                 </p>
 
                 <ul className="space-y-4">
@@ -145,27 +144,31 @@ export default function GolfCarPage() {
                       className="flex items-start gap-3.5 text-gray-700"
                     >
                       <CheckCircle2 className="w-5.5 h-5.5 text-kaza-gold shrink-0 mt-0.5" />
-                      <span className="text-base md:text-lg leading-relaxed">{feature}</span>
+                      <span className="text-base md:text-lg leading-relaxed">
+                        {feature}
+                      </span>
                     </motion.li>
                   ))}
                 </ul>
               </motion.div>
 
-              {/* Imagery */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="relative aspect-video lg:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-kaza-gold/25"
+                className="relative aspect-video w-full overflow-hidden rounded-3xl border border-kaza-navy-light/40 bg-kaza-navy-light shadow-2xl lg:aspect-[4/3]"
               >
                 <Image
-                  src={IMAGE_URL}
-                  alt={sectorData.title || "Golf Car"}
+                  src={DESCRIPTION_IMAGE}
+                  alt={imageAlt}
                   fill
-                  className="object-cover hover:scale-105 transition-transform duration-700"
+                  placeholder="blur"
+                  blurDataURL={BLUR_DATA_URL}
+                  className="object-cover object-center transition-transform duration-700 hover:scale-105"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
+                <div className="absolute inset-0 bg-gradient-to-br from-kaza-navy/10 via-transparent to-kaza-navy/35" />
               </motion.div>
             </div>
           </div>
@@ -181,10 +184,12 @@ export default function GolfCarPage() {
               className="rounded-3xl bg-gradient-to-r from-kaza-navy to-kaza-navy-light text-white p-8 lg:p-14 text-center flex flex-col items-center relative overflow-hidden shadow-xl"
             >
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,rgba(197,160,89,0.15),transparent_60%)]" />
-              
+
               <div className="relative z-10 flex flex-col items-center">
                 <span className="text-kaza-gold text-xs font-semibold uppercase tracking-wider mb-4">
-                  {lang === "ar" ? "ارفع أداء وحدتك اليوم" : "Elevate Your Asset Today"}
+                  {lang === "ar"
+                    ? "ارفع أداء وحدتك اليوم"
+                    : "Elevate Your Asset Today"}
                 </span>
                 <h3 className="text-2xl md:text-3.5xl font-serif font-bold mb-4 leading-tight max-w-2xl">
                   {lang === "ar"
@@ -202,7 +207,11 @@ export default function GolfCarPage() {
                     className="w-full sm:w-auto bg-kaza-gold hover:bg-kaza-gold-light text-kaza-navy font-bold px-8 py-3.5 rounded-full transition-all text-center inline-flex items-center justify-center gap-2 transform hover:-translate-y-0.5"
                   >
                     <span>{sectorData.ctaText}</span>
-                    {dir === "rtl" ? <ArrowLeft className="w-4 h-4" /> : <ArrowRight className="w-4 h-4" />}
+                    {dir === "rtl" ? (
+                      <ArrowLeft className="w-4 h-4" />
+                    ) : (
+                      <ArrowRight className="w-4 h-4" />
+                    )}
                   </Link>
                   <Link
                     href="/"
@@ -215,6 +224,7 @@ export default function GolfCarPage() {
             </motion.div>
           </div>
         </section>
+        <UnifiedContactForm />
       </div>
 
       <Footer />

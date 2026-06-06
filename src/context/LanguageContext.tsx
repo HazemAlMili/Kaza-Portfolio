@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { createContext, useContext, useState } from "react";
 
@@ -309,49 +309,6 @@ export const copy = {
         ctaText: "اطلب تذكرتك ذات الأولوية الآن"
       }
     },
-    pegasusSection: {
-      slogans: {
-        modernLiving: "مُصمم للحياة العصرية",
-        styleMeets: "حيث تتقاطع الأناقة مع تفاصيل الحياة اليومية",
-        kindServices: "دائماً في خدمتكم بأرقى المعايير"
-      },
-      overview: {
-        title: "بيجاسوس للمطابخ والدريسنج",
-        description: "تعتبر شركة بيجاسوس للمطابخ والدريسنج واحدة من أبرز الشركات الرائدة في تصميم وتصنيع المطابخ، والمتخصصة في الخزائن المخصصة وحلول الأثاث المدمج. تجمع الشركة بسلاسة بين الحرفية الفاخرة وجماليات التصميم الحديث والتقليدي المصممة خصيصاً لتتناسب مع المخططات المعمارية الفريدة وتفضيلات العملاء النخبوية."
-      },
-      commitments: {
-        productionScale: "حجم الإنتاج: تدير الشركة أحد أكبر المصانع المتخصصة في إنتاج المطابخ الفاخرة، غرف الملابس (Dressings)، وقطع الأثاث الفاخرة.",
-        hub: "مركز التصنيع: يقع المصنع الرئيسي في موقع استراتيجي في القاهرة، جمهورية مصر العربية.",
-        turnaround: "سرعة التنفيذ: نضمن التسليم والتركيب بجودة فائقة خلال ٢١ يوماً فقط من تاريخ توقيع العقد.",
-        qa: "ضمان الجودة: تقديم شهادة ضمان رسمية ومعتمدة لجميع المنتجات وقطع الأثاث التي يتم تسليمها."
-      },
-      philosophies: {
-        minimalist: "لمسات بسيطة: تفاصيل أقل، أناقة أكثر",
-        lighting: "حيث تصنع الإضاءة أبعاد المكان",
-        transformation: "شكل منزلك بلمسة مفعمة بالأناقة"
-      },
-      metrics: {
-        audienceLabel: "متابعون على منصات التواصل",
-        audienceVal: "١١٠ ألف+ متابع",
-        outputLabel: "حجم الإنتاج والكتالوج",
-        outputVal: "أكثر من ١٥٠ ألف منتج",
-        satisfactionLabel: "نسبة رضا العملاء",
-        satisfactionVal: "٤.٧ / ٥.٠ تقييمات إيجابية"
-      },
-      characteristics: {
-        lighting: "إضاءة تأكيدية ساحرة: دمج مكثف لأنظمة إضاءة LED المخصصة أسفل الخزائن، وداخل وحدات العرض الزجاجية، والمطورة في مسارات الأسقف لتعميق الإحساس بالفراغ.",
-        materials: "خامات استثنائية فاخرة: استخدام تشطيبات اللاكيه عالية اللمعان، أسطح رخامية سوداء متباينة، وخلفيات مذهلة من رخام الأونيكس الذهبي المضاء من الخلف.",
-        hidden: "مساحات الخدمة المخفية: هندسة فراغية مبتكرة تعتمد على أبواب جرارة خشبية مفرغة (Slatted) مصممة لإخفاء الأجهزة العملية مثل الغسالات، المجففات، وأحواض الخدمة بأناقة تامة.",
-        islands: "طاولات المطبخ المركزية (Islands): جزر وسطية واسعة مجهزة بمواقد مدمجة، أسطح متساوية، وامتداد هيكلي مخصص ليكون ركناً راقياً للإفطار."
-      },
-      contact: {
-        addressLabel: "عنوان المعرض",
-        addressVal: "سيلفر ستار مول، محور محمد نجيب، القاهرة الجديدة، مصر",
-        phone: "٠١٠٥٠٧٠٠٠٤٤",
-        website: "www.pegasuskitchens.com"
-      }
-    },
-
     // Form
     formTitle: "اطلب تقييم وحدتك",
     formName: "الاسم",
@@ -366,6 +323,32 @@ export const copy = {
     formSubmit: "أرسل الطلب",
     formNote: "سيتواصل معك فريق KAZA خلال 24 ساعة.",
     formPrivacy: "سيتواصل معك فريق KAZA خلال 24 ساعة. لن يتم مشاركة بياناتك مع أي طرف ثالث.",
+    unifiedContactForm: {
+      eyebrow: "استشارة تنفيذية",
+      title: "نسّق استشارتك مع فريق كازا",
+      body: "أرسل بياناتك الأساسية وسيتم فتح رسالة واتساب احترافية جاهزة للإرسال إلى فريق كازا التنفيذي.",
+      nameLabel: "اسم العميل",
+      namePlaceholder: "اكتب اسمك الكامل",
+      phoneLabel: "رقم تواصل أساسي",
+      phonePlaceholder: "+20 10 00082960",
+      locationLabel: "موقع الوحدة / المشروع المعماري",
+      locationPlaceholder: "مثال: العلمين الجديدة، مراسي، القاهرة الجديدة",
+      sectorLabel: "القطاع التشغيلي المطلوب",
+      submit: "فتح واتساب للتنسيق",
+      privacy: "سيتم تجهيز الرسالة في واتساب فقط، ولن يتم إرسال أي بيانات قبل مراجعتك لها.",
+      errors: {
+        name: "يرجى إدخال اسم لا يقل عن حرفين.",
+        phone: "يرجى إدخال رقم تواصل صحيح.",
+        location: "يرجى إدخال موقع الوحدة أو اسم المشروع."
+      },
+      sectorFallback: "خدمات كازا المتكاملة"
+    },
+    placeholderMetaData: {
+      golfCarAlt: "منظومة كازا الذكية لسيارات الجولف الفاخرة - قريباً",
+      limousineAlt: "أسطول كازا لسيارات الليموزين الخاصة - قريباً",
+      entertainmentAlt: "قطاع كازا للترفيه الفاخر والفعاليات النخبوية - قريباً",
+      ticketAlt: "إدارة كازا للتذاكر والخدمات الخاصة وكبار الشخصيات - قريباً"
+    },
     beachPage: {
       hero: {
         title: "إدارة تشغيل الشواطئ النخبوية",
@@ -395,14 +378,77 @@ export const copy = {
       }
     },
     furniturePage: {
-      kazaSection: {
-        title: "كازا للأثاث",
-        subtitle: "حلول الأثاث الفاخر، المطابخ، والخزائن المخصصة لملاك الوحدات الراقية."
+      hero: {
+        title: "حلول الأثاث الفاخر والتجهيز المتكامل",
+        subtitle: "إدارة وتجهيز الفراغات الداخلية مصممة خصيصاً لملاك الوحدات النخبوية."
+      },
+      sectorEyebrow: "قطاعات كازا المتخصصة",
+      sectionOne: {
+        eyebrow: "خط كازا للتصنيع",
+        title: "خط كازا للتصنيع والحرفية الفاخرة",
+        description: "نحن نتولى المسؤولية الكاملة عن دورة تأثيث وحدتك؛ بدءاً من المخططات الهندسية وحتى التصنيع الفاخر.",
+        overviewTitle: "حلول تأثيث مصممة بمعايير فندقية",
+        features: [
+          "تصميم وتخطيط داخلي مخصص لطبيعة الوحدة وتجربة الضيف المستهدفة.",
+          "إدارة تصنيع وتشطيب كاملة بمواد فاخرة مناسبة للاستخدام التشغيلي المتكرر.",
+          "تنسيق وتسليم نهائي يضمن جاهزية الوحدة للتصوير والتشغيل والاستضافة."
+        ]
       },
       gallery: {
-        title: "معرض كازا للأثاث",
-        description: "تصفح مجموعة من أرقى وحدات كازا المجهزة بأحدث تصاميم وتجهيزات كازا للأثاث الفاخر.",
-        designCaption: "تصميم كازا للأثاث"
+        eyebrow: "معرض التصميمات",
+        title: "معرض كازا للأثاث الفاخر",
+        description: "تصفح مجموعة من وحدات كازا المجهزة بتصميمات داخلية فاخرة وتجهيزات تشغيلية متكاملة.",
+        designCaption: "تصميم كازا للأثاث",
+        loadMore: "عرض المزيد من التصميمات"
+      },
+      sectionTwo: {
+        eyebrow: "أنظمة المطابخ والخزائن",
+        title: "أنظمة كازا للمطابخ وغرف الملابس المعمارية",
+        description: "أنظمة الخزائن المدمجة والمطابخ الفاخرة المجهزة بالكامل لتناسب نمط حياتك العصرية.",
+        visualCaption: "تفاصيل معمارية مصممة للراحة اليومية والانطباع الفندقي الفاخر.",
+        commitments: [
+          "تخطيط معماري ذكي للمطابخ وغرف الملابس ومساحات التخزين المدمجة.",
+          "خامات وتشطيبات فاخرة مع حلول إضاءة وتفاصيل عملية عالية الاعتمادية.",
+          "إدارة تنفيذ وتركيب متكاملة لضمان تسليم متناسق وجاهز للاستخدام."
+        ],
+        metrics: [
+          { label: "إدارة دورة التأثيث", value: "من التصميم للتسليم", note: "مسار واحد تحت إشراف كازا" },
+          { label: "جاهزية التشغيل", value: "ضيافة فاخرة", note: "تصميم يخدم الضيف والمالك" },
+          { label: "جودة التنفيذ", value: "معايير مؤسسية", note: "تفاصيل قابلة للفحص والمتابعة" }
+        ],
+        lookbookEyebrow: "كتالوج الإلهام",
+        lookbookTitle: "تفاصيل متكاملة لمساحات فاخرة",
+        lookbookDescription: "حلول عملية وجمالية للمطابخ وغرف الملابس والخزائن المدمجة داخل وحدات الضيافة الراقية.",
+        characteristics: [
+          "إضاءة تأكيدية مدمجة تبرز الخامات وتعمق الإحساس بالفراغ.",
+          "خامات وتشطيبات فاخرة مختارة لتحمل الاستخدام مع الحفاظ على المظهر الراقي.",
+          "مساحات خدمة وتخزين مخفية تحافظ على نظافة المشهد وسهولة التشغيل.",
+          "جزر مطبخ عملية ومساحات عمل مصممة لتجربة يومية مريحة."
+        ]
+      },
+      extendedGallery: {
+        eyebrow: "معرض المطابخ والخزائن",
+        title: "معرض المشاريع المتكاملة",
+        description: "استعرض حلول المطابخ وغرف الملابس والخزائن المدمجة ضمن منظومة كازا للتجهيز الداخلي.",
+        designCaption: "تصميم كازا للمطابخ والخزائن",
+        loadMore: "عرض المزيد من التصميمات"
+      },
+      contactInquiries: {
+        label: "الخط الساخن للاستشارات التنفيذية",
+        phoneValue: "+20 10 00082960",
+        phoneHref: "tel:+201000082960"
+      },
+      cta: {
+        eyebrow: "ارفع أداء وحدتك اليوم",
+        title: "هل ترغب في تجهيز وحدتك بحلول كازا للأثاث الفاخر؟",
+        body: "ابدأ بتزويدنا ببيانات عقارك، وسيتواصل معك فريق كازا لمراجعة احتياجات التأثيث والتجهيز المناسبة.",
+        primary: "اطلب عرض تجهيز من كازا",
+        secondary: "العودة للرئيسية"
+      },
+      aria: {
+        closeLightbox: "إغلاق المعرض",
+        previousImage: "الصورة السابقة",
+        nextImage: "الصورة التالية"
       }
     },
     restaurantPage: {
@@ -703,49 +749,6 @@ export const copy = {
         ctaText: "Request Priority Tickets"
       }
     },
-    pegasusSection: {
-      slogans: {
-        modernLiving: "Designed for modern living",
-        styleMeets: "Where style meets everyday living",
-        kindServices: "Always in your kind services"
-      },
-      overview: {
-        title: "Pegasus Kitchens & Dressings",
-        description: "Pegasus Kitchens & Dressings is a prominent kitchen design and manufacturing firm specializing in bespoke cabinetry and fitted furniture solutions. The company seamlessly blends premium craftsmanship with modern and traditional design aesthetics tailored to complement unique architectural layouts and client preferences."
-      },
-      commitments: {
-        productionScale: "Scale of Production: Operates one of the largest manufacturing facilities dedicated to producing high-end kitchens, dressings, and general furniture pieces.",
-        hub: "Manufacturing Hub: The primary factory is strategically located in Cairo, Egypt.",
-        turnaround: "Rapid Turnaround Time: Promises premium-quality delivery and installation within 21 days from the date of contract signing.",
-        qa: "Quality Assurance: Offers an official warranty across all delivered products and furniture items."
-      },
-      philosophies: {
-        minimalist: "Simple Touch & Less Details, More elegance",
-        lighting: "Where lighting creates spaces",
-        transformation: "Shape your Home with a Touch of Elegance"
-      },
-      metrics: {
-        audienceLabel: "Social Media Audience",
-        audienceVal: "110k+ Followers",
-        outputLabel: "Product Output / Catalog",
-        outputVal: "Over 150k Products",
-        satisfactionLabel: "Customer Satisfaction",
-        satisfactionVal: "4.7 / 5.0 Good Reviews"
-      },
-      characteristics: {
-        lighting: "Dramatic Accent Lighting: Extensive integration of custom LED strip lighting under cabinets, within glass display units, and built into ceiling tracks to amplify depth.",
-        materials: "Premium Materials: Inclusion of high-gloss lacquer finishes, contrasting black stone countertops, and striking backlit golden onyx/marble backsplashes.",
-        hidden: "Concealed Utility Spaces: Custom spatial architecture featuring slatted sliding doors designed to elegantly conceal functional appliances like washing machines, dryers, and service sinks.",
-        islands: "Modern Kitchen Islands: Spacious center islands built with integrated hobs, flush countertop surfaces, and extended structural breakfast bars."
-      },
-      contact: {
-        addressLabel: "Showroom Address",
-        addressVal: "Silver Star Mall, Mohamed Naguib Axis, New Cairo, Egypt",
-        phone: "01050700044",
-        website: "www.pegasuskitchens.com"
-      }
-    },
-
     formTitle: "Request a Property Evaluation",
     formName: "Full Name",
     formPhone: "Phone / WhatsApp",
@@ -759,6 +762,32 @@ export const copy = {
     formSubmit: "Send Request",
     formNote: "KAZA team will contact you within 24 hours.",
     formPrivacy: "KAZA team will contact you within 24 hours. Your data will never be shared with third parties.",
+    unifiedContactForm: {
+      eyebrow: "Executive Consultation",
+      title: "Coordinate with the KAZA team",
+      body: "Share your initial details and we will prepare a refined WhatsApp message addressed to KAZA's executive team.",
+      nameLabel: "Client Name",
+      namePlaceholder: "Enter your full name",
+      phoneLabel: "Primary Contact",
+      phonePlaceholder: "+20 10 00082960",
+      locationLabel: "Property Location / Project",
+      locationPlaceholder: "Example: New Alamein, Marassi, New Cairo",
+      sectorLabel: "Interested Sector",
+      submit: "Open WhatsApp Consultation",
+      privacy: "The message opens in WhatsApp for your review before sending. No data is submitted to an internal database.",
+      errors: {
+        name: "Please enter a name with at least 2 characters.",
+        phone: "Please enter a valid contact number.",
+        location: "Please enter the property location or project name."
+      },
+      sectorFallback: "KAZA Integrated Services"
+    },
+    placeholderMetaData: {
+      golfCarAlt: "KAZA Smart Golf Car Premium Services Coming Soon",
+      limousineAlt: "KAZA Executive Private Limousine Fleet Coming Soon",
+      entertainmentAlt: "KAZA Luxury Entertainment and Curated Events Coming Soon",
+      ticketAlt: "KAZA Executive Ticket Management VIP Access Coming Soon"
+    },
     beachPage: {
       hero: {
         title: "Elite Beachfront Operations",
@@ -788,14 +817,77 @@ export const copy = {
       }
     },
     furniturePage: {
-      kazaSection: {
-        title: "KAZA Furniture",
-        subtitle: "Bespoke cabinetry and integrated luxury furnishing solutions for premium property owners."
+      hero: {
+        title: "Bespoke Furnishing & Interior Solutions",
+        subtitle: "Tailored interior management built exclusively for premium property owners."
+      },
+      sectorEyebrow: "KAZA Specialized Sectors",
+      sectionOne: {
+        eyebrow: "KAZA Craftsmanship Line",
+        title: "KAZA Premium Craftsmanship Line",
+        description: "We take full ownership of your property furnishing lifecycle. From design layouts to elite manufacturing.",
+        overviewTitle: "Bespoke furnishing with hotel-grade execution",
+        features: [
+          "Custom interior planning tailored to the unit, owner goals, and target guest experience.",
+          "Premium manufacturing and finishing management using durable, operation-ready materials.",
+          "Final styling, handover, and readiness checks for photography, launch, and guest hosting."
+        ]
       },
       gallery: {
-        title: "KAZA Furniture Gallery",
-        description: "Explore our curated collection of premium units furnished with luxury KAZA designs and custom setups.",
-        designCaption: "KAZA Furniture Design"
+        eyebrow: "Design Showcase",
+        title: "KAZA Bespoke Furnishing Gallery",
+        description: "Explore premium KAZA-managed interiors built for luxury presentation and operational readiness.",
+        designCaption: "KAZA Bespoke Furnishing Design",
+        loadMore: "Show More Designs"
+      },
+      sectionTwo: {
+        eyebrow: "Architectural Fitted Systems",
+        title: "KAZA Architectural Kitchens & Dressings",
+        description: "Luxury integrated fitted cabinetry and space optimization layouts deployed flawlessly.",
+        visualCaption: "Architectural details designed for daily comfort and a luxury hospitality impression.",
+        commitments: [
+          "Smart architectural planning for kitchens, dressing rooms, and integrated storage zones.",
+          "Premium finishes, lighting concepts, and durable details suited for repeated hospitality use.",
+          "End-to-end execution and installation management for a cohesive, ready-to-use delivery."
+        ],
+        metrics: [
+          { label: "Furnishing Lifecycle", value: "Design to Handover", note: "One accountable KAZA workflow" },
+          { label: "Operational Readiness", value: "Hospitality Grade", note: "Built for owners and guests" },
+          { label: "Execution Quality", value: "Corporate Standard", note: "Details that can be inspected" }
+        ],
+        lookbookEyebrow: "Design Lookbook",
+        lookbookTitle: "Integrated details for premium spaces",
+        lookbookDescription: "Practical and refined kitchen, dressing, and cabinetry solutions for luxury hospitality units.",
+        characteristics: [
+          "Integrated accent lighting that highlights materials and adds spatial depth.",
+          "Premium finishes selected for durability while preserving a polished luxury presence.",
+          "Concealed service and storage zones that keep the space clean and easy to operate.",
+          "Functional kitchen islands and work surfaces designed for comfortable daily use."
+        ]
+      },
+      extendedGallery: {
+        eyebrow: "Kitchen & Cabinetry Gallery",
+        title: "Integrated Project Gallery",
+        description: "Browse KAZA-managed kitchen, dressing, and fitted cabinetry solutions within the interior setup system.",
+        designCaption: "KAZA Kitchen & Cabinetry Design",
+        loadMore: "Show More Designs"
+      },
+      contactInquiries: {
+        label: "Corporate Consultation Hotline",
+        phoneValue: "+20 10 00082960",
+        phoneHref: "tel:+201000082960"
+      },
+      cta: {
+        eyebrow: "Elevate Your Asset Today",
+        title: "Partner with KAZA for bespoke furnishing solutions.",
+        body: "Request an initial furnishing and interior setup consultation. Our team will guide you through the right preparation path for your property.",
+        primary: "Request a KAZA Furnishing Quote",
+        secondary: "Back to Home"
+      },
+      aria: {
+        closeLightbox: "Close lightbox",
+        previousImage: "Previous image",
+        nextImage: "Next image"
       }
     },
     restaurantPage: {

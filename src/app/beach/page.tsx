@@ -9,6 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLang, copy } from "@/context/LanguageContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import UnifiedContactForm from "@/components/UnifiedContactForm";
 import { CheckCircle2, ArrowLeft, ArrowRight, X, ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -605,6 +606,7 @@ export default function BeachPage() {
             </motion.div>
           </div>
         </section>
+        <UnifiedContactForm />
       </div>
 
       <Footer />

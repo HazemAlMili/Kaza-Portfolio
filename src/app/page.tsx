@@ -8,6 +8,7 @@ import WhyKazaSection from "@/components/WhyKazaSection";
 import LeadershipSection from "@/components/LeadershipSection";
 import ProcessSection from "@/components/ProcessSection";
 import FinalCTASection from "@/components/FinalCTASection";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <LeadershipSection />
       <ProcessSection />
       <FinalCTASection />
+      <Footer />
     </main>
   );
 }
